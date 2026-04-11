@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=MySQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+      mode: never
+
+rate-limiter:
+  enabled: true
+  rule-cache-ttl-seconds: 5
+  cleanup-interval-seconds: 10
+  counter-max-idle-seconds: 30
+  user-id-header: X-User-Id
+
+logging:
+  level:
+    com.ratelimiter: DEBUG

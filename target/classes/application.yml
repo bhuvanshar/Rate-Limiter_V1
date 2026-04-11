@@ -1,0 +1,65 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-rate-limiter
+  datasource:
+    url: jdbc:mysql://localhost:3306/rate_limiter_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: ${DB_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 5000
+      idle-timeout: 300000
+      max-lifetime: 600000
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+
+# Rate Limiter Configuration
+rate-limiter:
+  enabled: true
+  # How often to reload rules from DB cache (seconds)
+  rule-cache-ttl-seconds: 60
+  # How often to evict expired counter entries (seconds)
+  cleanup-interval-seconds: 60
+  # Max age for idle counter entries before eviction (seconds)
+  counter-max-idle-seconds: 300
+  # Header name to extract user ID from (supports JWT integration)
+  user-id-header: X-User-Id
+  # Paths to exclude from rate limiting
+  excluded-paths:
+    - /actuator/**
+    - /rate-limit/admin/**
+  # Async throttle log queue capacity
+  throttle-log-queue-capacity: 10000
+  # Batch size for throttle log inserts
+  throttle-log-batch-size: 100
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+logging:
+  level:
+    com.ratelimiter: INFO
+    org.hibernate.SQL: WARN

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhuvan Sharma | Portfolio</title>
+    <meta
+        name="description"
+        content="Portfolio of Bhuvan Sharma, a software development engineer building resilient backend systems with Java, Spring Boot, and product-focused execution."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="ambient ambient--one" aria-hidden="true"></div>
+<div class="ambient ambient--two" aria-hidden="true"></div>
+
+<header class="topbar shell" data-reveal>
+    <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand__mark">BS</span>
+        <span class="brand__text">Portfolio</span>
+    </a>
+
+    <nav class="topbar__nav" aria-label="Primary">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="topbar__meta">
+        <span class="topbar__clock" id="ist-time">Bengaluru time</span>
+    </div>
+</header>
+
+<main id="top">
+    <section class="hero shell">
+        <div class="hero__copy" data-reveal>
+            <p class="eyebrow" id="hero-kicker"></p>
+            <h1 class="hero__title" id="hero-title"></h1>
+            <p class="hero__summary" id="hero-summary"></p>
+
+            <div class="hero__actions" id="hero-actions"></div>
+            <div class="hero__highlights" id="hero-highlights"></div>
+
+            <div class="hero__signature">
+                <span class="hero__line"></span>
+                <p id="hero-note"></p>
+            </div>
+        </div>
+
+        <aside class="hero__spotlight panel" data-reveal>
+            <div class="hero__visual" aria-hidden="true">
+                <div class="hero-orbit hero-orbit--outer"></div>
+                <div class="hero-orbit hero-orbit--mid"></div>
+                <div class="hero-orbit hero-orbit--inner"></div>
+                <div class="hero-core">
+                    <span class="hero-core__eyebrow">Production Proof</span>
+                    <strong class="hero-core__value" data-countup="99.8" data-suffix="%">99.8%</strong>
+                    <span class="hero-core__caption">rate limiter accuracy</span>
+                </div>
+                <div class="hero-badge hero-badge--a">500+ daily users</div>
+                <div class="hero-badge hero-badge--b">30+ APIs shipped</div>
+                <div class="hero-badge hero-badge--c">60% faster flow</div>
+            </div>
+            <p class="panel__eyebrow">Current focus</p>
+            <h2 class="panel__title" id="focus-title"></h2>
+            <p class="panel__body" id="focus-body"></p>
+
+            <dl class="fact-list" id="focus-facts"></dl>
+        </aside>
+    </section>
+
+    <section class="shell metrics" data-reveal>
+        <div class="section-heading">
+            <p class="eyebrow">Selected impact</p>
+            <h2>Systems that stay fast, accurate, and calm under pressure.</h2>
+        </div>
+        <div class="metric-grid" id="metric-grid"></div>
+    </section>
+
+    <section class="shell split-story">
+        <article class="panel panel--story" data-reveal>
+            <p class="panel__eyebrow">About</p>
+            <h2 class="story-title" id="about-title"></h2>
+            <p class="story-copy" id="about-copy"></p>
+        </article>
+
+        <article class="panel panel--code" data-reveal>
+            <p class="panel__eyebrow">Engineering lens</p>
+            <h2 class="story-title">Thoughtful architecture, not just shipped features.</h2>
+            <p class="story-copy">
+                I enjoy turning high-level product requirements into dependable systems with clear tradeoffs,
+                operational visibility, and room to scale.
+            </p>
+            <pre class="code-preview"><code>tokens = min(capacity, tokens + elapsed * refillRate)
+if tokens &lt; 1:
+    reject()
+else:
+    allow()</code></pre>
+        </article>
+    </section>
+
+    <section class="shell section-block" id="experience">
+        <div class="section-heading" data-reveal>
+            <p class="eyebrow">Experience</p>
+            <h2>Building reliable platforms for enterprise workflows and production delivery.</h2>
+        </div>
+        <div class="timeline" id="experience-list"></div>
+    </section>
+
+    <section class="shell section-block" id="projects">
+        <div class="section-heading" data-reveal>
+            <p class="eyebrow">Projects</p>
+            <h2>Case studies that translate systems thinking into measurable outcomes.</h2>
+        </div>
+        <div class="project-stack" id="project-list"></div>
+    </section>
+
+    <section class="shell section-block skills-section" id="skills">
+        <div class="section-heading" data-reveal>
+            <p class="eyebrow">Capabilities</p>
+            <h2>Backend depth, frontend fluency, and a strong bias for maintainable execution.</h2>
+        </div>
+
+        <div class="skills-layout">
+            <div class="skills-grid" id="skills-grid"></div>
+
+            <aside class="panel panel--awards" data-reveal>
+                <p class="panel__eyebrow">Recognition</p>
+                <div class="award-list" id="award-list"></div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="shell contact-band" id="contact">
+        <div class="contact-band__content panel" data-reveal>
+            <p class="panel__eyebrow">Contact</p>
+            <h2 class="contact-band__title" id="contact-title"></h2>
+            <p class="contact-band__copy" id="contact-copy"></p>
+
+            <div class="hero__actions" id="contact-actions"></div>
+
+            <div class="contact-band__footer">
+                <span id="contact-location"></span>
+                <span id="contact-note"></span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer shell">
+    <p>&copy; <span id="current-year"></span> <span id="footer-name"></span></p>
+    <p>Editable content lives in <code>portfolio-data.js</code></p>
+</footer>
+
+<script src="portfolio-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
